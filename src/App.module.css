@@ -1,0 +1,65 @@
+/* General styling for the entire app */
+.App {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    padding: 20px;
+    min-height: 100vh;
+  }
+  
+  /* Container for the main content */
+  .mainContent {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  /* Navigation bar styling */
+  .navBar {
+    background-color: #343a40;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+  }
+  
+  .navBar a {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+  }
+  
+  .navBar a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Footer styling */
+  .footer {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #343a40;
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  /* Basic button styling */
+  .button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .button:hover {
+    background-color: #218838;
+  }
+  

@@ -1,0 +1,71 @@
+.basket {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.basketItem {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+.basketItem h2 {
+  font-size: 1.2em;
+}
+
+.basketItem p {
+  font-size: 1em;
+}
+.basketItem span {
+  flex: 1;
+  text-align: center;
+}
+
+.quantityControl {
+  display: flex;
+  align-items: center;
+}
+
+.quantityControl button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.quantityControl button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.quantityControl span {
+  margin: 0 10px;
+}
+
+.removeButton {
+  display: flex;
+  align-items: center;
+}
+
+.removeButton {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  margin: 0 10px;
+  padding: 5px 10px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.removeButton :hover {
+  background-color: #c82333;
+}
