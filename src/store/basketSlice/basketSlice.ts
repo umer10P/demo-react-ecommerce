@@ -1,19 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '..';
-interface BasketItem {
-  id: number;
-  name: string;
-  price: number;
-  quantity: number;
-}
-
-interface BasketState {
-  items: BasketItem[];
-  status: 'idle' | 'loading' | 'succeeded' | 'failed';
-  error: string | null;
-  addItemStatus: 'idle' | 'loading' | 'succeeded' | 'failed';
-}
-
+import { BasketState, BasketItem } from '../../Interfaces'
 const initialState: BasketState = {
   items: [],
   status: 'idle',
@@ -58,7 +45,7 @@ const basketSlice = createSlice({
 });
 
 export const { addItemToBasket, removeItemFromBasket, updateItemQuantityInBasket } = basketSlice.actions;
-// export const { BasketState, BasketItem } = basketSlice
+
 export const selectTotalQuantity = (state: RootState) =>
   state.basket.items.reduce((total, item) => total + item.quantity, 0);
 

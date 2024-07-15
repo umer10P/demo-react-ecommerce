@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useAppSelector } from '../../store/hooks';
+import { useAppSelector } from '../../hooks/hooks';
 import { selectTotalQuantity } from '../../store/basketSlice/basketSlice';
 import styles from './NavBar.module.css';
 

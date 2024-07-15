@@ -1,12 +1,13 @@
 import { useEffect } from 'react';
-import { useAppDispatch, useAppSelector } from '../store/hooks';
+import { useAppDispatch, useAppSelector } from './hooks';
 import { fetchProducts } from '../store/productSlice/productsSlice';
+import { RootState } from '../store';
 
 export const useProducts = () => {
   const dispatch = useAppDispatch();
-  const products = useAppSelector((state: any) => state.products.products);
-  const status = useAppSelector((state: any) => state.products.status);
-  const error = useAppSelector((state:any ) => state.products.error);
+  const products = useAppSelector((state: RootState) => state.products.products);
+  const status = useAppSelector((state: RootState) => state.products.status);
+  const error = useAppSelector((state:RootState ) => state.products.error);
 
   useEffect(() => {
     if (status === 'idle') {

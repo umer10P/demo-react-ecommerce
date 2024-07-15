@@ -1,0 +1,17 @@
+.basket {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.basket h2 {
+  font-size: 1.2em;
+}
+
+.basket p {
+  font-size: 1em;
+}
+
