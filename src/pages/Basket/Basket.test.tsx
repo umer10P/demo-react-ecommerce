@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
 import { MemoryRouter } from 'react-router-dom';
@@ -55,36 +55,40 @@ describe('Basket', () => {
     expect(screen.getAllByText('2')[0]).toBeInTheDocument();
   });
 
-  it('updates item quantity in the basket', () => {
+  it('updates item quantity in the basket', async () => {
     const { getAllByText } = renderWithProviders(<Basket />);
 
     const incrementButtons = getAllByText('+');
     fireEvent.click(incrementButtons[0]);
 
-    expect(mockUseBasket().updateItemQuantity).toHaveBeenCalledWith(1, 2);
+    await waitFor(() => {
+      expect(mockUseBasket().updateItemQuantity).toHaveBeenCalledWith(1, 2);
+    });
 
     const decrementButtons = getAllByText('-');
     fireEvent.click(decrementButtons[1]);
 
-    expect(mockUseBasket().updateItemQuantity).toHaveBeenCalledWith(2, 1);
+    await waitFor(() => {
+      expect(mockUseBasket().updateItemQuantity).toHaveBeenCalledWith(2, 1);
+    });
   });
 
-  it('does not allow item quantity to go below 1', () => {
+  it('does not allow item quantity to go below 1', async () => {
     const { getAllByText } = renderWithProviders(<Basket />);
 
     const decrementButtons = getAllByText('-');
-    fireEvent.click(decrementButtons[0]);
-
-    expect(mockUseBasket().updateItemQuantity).not.toHaveBeenCalledWith(1, 0);
+    expect(decrementButtons[0]).toBeDisabled();
   });
 
-  it('removes item from the basket', () => {
+  it('removes item from the basket', async () => {
     const { getAllByText } = renderWithProviders(<Basket />);
 
     const removeButtons = getAllByText('Remove');
     fireEvent.click(removeButtons[0]);
 
-    expect(mockUseBasket().removeFromBasket).toHaveBeenCalledWith(1);
+    await waitFor(() => {
+      expect(mockUseBasket().removeFromBasket).toHaveBeenCalledWith(1);
+    });
   });
 
   it('displays empty basket message', () => {
